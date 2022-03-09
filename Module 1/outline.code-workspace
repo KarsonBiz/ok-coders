@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../OC - Challenge 1"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "OC - Challenge 1"
+	}
+}
