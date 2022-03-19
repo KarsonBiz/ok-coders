@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <h1>Quarantine Feedback Form</h1>
+    </header>
+    <body>
+        <section>
+            <span>Did you enjoy Quarantine?</span>
+            <br>
+            <input type="radio" name="enjoy" id="yes" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" name="enjoy" id="yes" value="yes">
+            <label for="no">No</label>
+        </section>
+        <section>
+            <span>What did you spend time doing?</soan>
+                <br>
+            <input type="checkbox" name="activities" id="tiktok" value="tiktok">
+            <label for="tiktok">Tik Tok Dances</label>
+            <input type="checkbox" name="activities" id="netflix" value="netflix">
+            <label for="netflix">Watching Netflix</label>
+            <input type="checkbox" name="activities" id="snacking" value="snacking">
+            <label for="snacking">Snacking</label>
+            <input type="checkbox" name="activities" id="exercising" value="exercising">
+            <label for="exercising">Exercising</label>
+            <input type="checkbox" name="activities" id="sleeping" value="sleeping">
+            <label for="sleeping">Sleeping</label>    
+        </section>
+        <section class="experience">
+            <label for="experience">What would you change about your experience?</label>
+            <br>
+            <textarea id="experience" name="experience" rows="3" cols="10"></textarea>
+        </section>
+        <section class="bestthing">
+            <label for="bestthing">Best thing that happened to you?</label>
+            <br>
+            <textarea id="bestthing" name="bestthing" rows="3" cols="10"></textarea>
+        </section>
+        <section>
+            <label for="end-date">Suggested end date?</label>
+            <input type="date" id="end-date" name="end-date" value="2022-07-01" min="2021-01-01" max="2025-01-01">
+        </section>
+        <section class="submission">
+            <input type="submit" value="Submit">
+        </section>
+    </body>
+
+</html>
+

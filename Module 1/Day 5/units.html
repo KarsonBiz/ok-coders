@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/units.css">
+    </head>
+    <body>
+        <!-- <h1>Units!</h1>
+        <h2>Pixels: px</h2>
+        <!- Responsive Units/Changeable -->
+        <!-- <h3>Rem: Baased on root element</h3>
+        <h4>Em: Based on parent element</h4>
+        <h5>% Percentages: based on parent</h5>
+        <h6>Viewport vh vw: based on viewport</h6>  -->
+        <style>
+            .h1 {
+                font-size: 1rem;
+            }
+
+            .parent {
+                font-size: 40px;
+            }
+
+            html {
+                font-size: 100%;
+            }
+
+            .h2 {
+                font-size: 1rem;
+            }
+
+            .p {
+                font-size: .75rem;
+            }
+
+            @media (min-width: 600px) {
+                html {
+                    font-size: 150%;
+                }
+            }
+
+            @media (min-width: 1000px) {
+                html {
+                    font-size: 200%;
+                }
+            }
+
+        </style>
+
+        <!-- 1 rem = 16px ..... root element = 100% -->
+        <div class="parent">
+            <h1 class="h1">Header inside a Div</h1>
+        </div>
+        <h2 class="h2">Second Header</h2>
+
+        <h1 class="h1">Header 1</h1>
+        <h2 class="h2">Headers 2</h2>
+        <h3 class="p">Paragraph 1</h3>
+
+    </body>
+
+
+</html>
