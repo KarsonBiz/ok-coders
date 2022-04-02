@@ -218,6 +218,28 @@
     </section>
     <!-- End of Contact -->
 
+    <!-- adding client side JavaScript -->
+  <script>
+      var test = 1 + 1
+      console.log(test)
+      test = "hello";
+      console.log(test)
+      console.log("hello world")
+      console.log("your first javascript, ok coders!")
+
+      const para = document.querySelector('p');
+
+      para.addEventListener('click', updateName);
+
+      function updateName() {
+        const name = prompt('Enter a new name');
+        para.textContent = `Player 1: ${name}`;
+      }
+
+      test = 2 + 2
+      console.log(test)
+  </script>
+    <!-- End of client side JavaScript -->
 
   </body>
 </html>
