@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="licensestylesheet.css">
+
         <title>License</title>
     </head>
 
@@ -10,7 +11,7 @@
     </body>
 
     <script>
-        const doThing = () => {
+        window.onload = function(){
         // => is a "fat arrow"
         const name = window.prompt("What is your name?");
         const age = window.prompt("What is your age?");
@@ -21,7 +22,11 @@
         console.log(`| address: ${address}        |`);
         console.log("==============================");
         }
-        windows.onload = doThing;
+
+        // look up padEnd function to make all the ==== equal no matter what is inout
+        // padEnd should be added into the const variable assignment
+        // padEnd is in the "Strings - Javascript" in developer.mozilla.org
+
     </script>
 
 </html>

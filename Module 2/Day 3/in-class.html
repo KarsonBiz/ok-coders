@@ -1,0 +1,54 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+        <button id="play-button">Play Mad Lib!</button>
+
+
+        <script>
+            const test = "OK Coders";
+            //            012345678
+            
+            const successMessage = 'Hey, the response from the boss was "you are doing such a good job".'
+            console.log(successMessage);
+
+            const successMessageTwo = "Hey, the response from the boss was \"you are doing such a good job\"."
+            console.log(successMessageTwo);
+
+            const successMessageThree = `Hey, the ${test} response from the boss was \"you are doing such a good job\".`
+            console.log(successMessageThree);
+            // These are 3 different ways to write the same thing
+
+            const testString = "OK Coders";
+            const lengthOfString = testString.length;
+            console.log(lengthOfString);
+            console.log(testString[10]);
+
+            const chatMessage = "I'm a kid, I have a potty mouth, shit";
+            const cleanedMessage = chatMessage.replaceAll('shit', '');
+            const advancedExample = chatMessage.replaceAll(/shit|potty/g, '');
+            console.log(chatMessage);
+            console.log(cleanedMessage);
+            console.log(advancedExample);
+            // example of implimenting object - string (.replaceAll()) from developer.mozilla.org
+            
+
+            //code for mad lib below here
+
+            const playButton = document.getElementById("play-button");
+            playButton.addEventListener('click', function() {
+                console.log("Play Mad Lib!");
+                console.log("Here is your sentence......");
+                console.log("OK Coders is the ______ class I've ever taken. It is SOOOO ____! ");
+                const firstWord = prompt("First Word?");
+                const secondWord = prompt("Secon Word?");
+                console.log(`OK Coders is the ${firstWord} class I'be ever taken. It is SOOOO ${secondWord}!`);
+            })
+
+        </script>
+
+    </body>
+</html>
