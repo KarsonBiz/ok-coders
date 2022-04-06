@@ -1,6 +1,6 @@
 git status
 git add .
 git status
-git commit -m "first commit"
+git commit -m "describe the code"
 git status
 git push
