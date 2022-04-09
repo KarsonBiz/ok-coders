@@ -1,0 +1,60 @@
+<html>
+
+    <head>
+        <title>Garage Sale!</title>
+    </head>
+
+    <body>
+        <div>
+            <h4>Teddy Bear</h4>
+            <p>Passed down for a few generations</p>
+            <p>$42</p>
+            <button is="teddy-bear-add">Add to cart!</button>
+        </div>    
+
+        <div>
+            <h4>Coffee Pot</h4>
+            <p>CLEANED, makes a full pot fast!</p>
+            <p>$63</p>
+            <button id="coffee-pot-add">Add to cart!</button>
+        </div>  
+        
+        <div>
+            <button id="checkout">Checkout!</button>
+        </div>
+
+        <script>
+            const shoppingCart = [];
+            const teddyBearButton = document.getElementById("teddy-bear-add");
+            const coffeePotButton = document.getElementById("coffee-pot-add");
+            const checkoutButton = document.getElementById("checkout");
+
+            function teddyBearClick() {
+                console.log("clicked teddy bear")
+                shoppingCart.push([42, 'teddy-bear-add', 'TeddyBear'])
+            }
+
+            teddyBearButton.addEventListener('click', teddyBearClick)
+
+            function coffeePotClick() {
+                console.log("clicked coffee pot")
+                shoppingCart.push([63, 'coffee-pot-add', 'CoffeePot'])
+            }
+
+            coffeePotButton.addEventListener('click', coffeePotClick)
+
+            function checkoutClick() {
+                console.log("checkout clicked");
+                console.log(shoppingCart);
+                console.log(shoppingCart[0][0] + shoppingCart [1] [0])
+                const totalCartPrice = shoppingCart.reduce((total, current) => total[0] + current[0], 0)
+                console.log(totalCartPrice);
+            }
+            
+            checkoutButton.addEventListener('click', checkoutClick);
+
+
+        </script>
+    </body>
+
+</html>
