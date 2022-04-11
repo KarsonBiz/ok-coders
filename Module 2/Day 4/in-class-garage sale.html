@@ -9,7 +9,7 @@
             <h4>Teddy Bear</h4>
             <p>Passed down for a few generations</p>
             <p>$42</p>
-            <button is="teddy-bear-add">Add to cart!</button>
+            <button id="teddy-bear-add">Add to cart!</button>
         </div>    
 
         <div>
@@ -30,18 +30,18 @@
             const checkoutButton = document.getElementById("checkout");
 
             function teddyBearClick() {
-                console.log("clicked teddy bear")
+                console.log("clicked bear")
                 shoppingCart.push([42, 'teddy-bear-add', 'TeddyBear'])
             }
 
-            teddyBearButton.addEventListener('click', teddyBearClick)
+            teddyBearButton.addEventListener('click', teddyBearClick);
 
             function coffeePotClick() {
                 console.log("clicked coffee pot")
                 shoppingCart.push([63, 'coffee-pot-add', 'CoffeePot'])
             }
 
-            coffeePotButton.addEventListener('click', coffeePotClick)
+            coffeePotButton.addEventListener('click', coffeePotClick);
 
             function checkoutClick() {
                 console.log("checkout clicked");
