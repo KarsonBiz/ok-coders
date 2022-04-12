@@ -1,0 +1,36 @@
+/* Header Section */
+.header-bg {
+    background-image: url(img/house.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: whitesmoke;
+    margin: auto;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.header-1 {
+    border-bottom: 5px solid whitesmoke;
+    font-weight: bold;
+    font-size: 150px;
+    text-align: center;
+}
+
+.paragraph-1 {
+    font-weight: bold;
+    font-size: 50px;
+}
+/* End of Header Section */
+
+/* About Section */
+.header-about {
+    font-weight: bold;
+    font-size: xxx-large;
+    text-align: center;
+    margin: 20% 20%;
+}
+/* End of About Section */
+
+/* Start of Sale Items Section */
+
+/* End of Sale Items Section */
