@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <title>Functions!</title>
+</head>
+
+<body>
+    <script>
+
+        1 + 1;
+        const test = "hello";
+
+        // function helloWorldExample() {
+        //     1 + 1
+        //     const test = "Hello";
+        // }
+
+        function logHelloWorld() {
+            console.log("Hello World");
+        }
+
+        logHelloWorld();    //Calls the function & "log" is a function on an object in the console
+
+        function sayHello(name, age) {
+            // const test = "say Hello variable";   if you "note" this out it will call on the global "test"
+            console.log(test);
+            return `Hello! Welcome to our site, ${name}, you are ${age}.`;
+        }
+
+        const sayHelloMessage = sayHello("Karson", 30);
+        console.log(sayHelloMessage);
+        // sayHello("Heather");
+        console.log(test);   //outside of the local function "test" the global "test" is always chosen
+
+    </script>
+
+</body>
+
+</html>
