@@ -22,13 +22,39 @@
 }
 /* End of Header Section */
 
+/* Color Scheme */
+/* --little-boy-blue: #669ee9ff;
+--light-steel-blue: #b9d0efff;
+--dark-olive-green: #516f1eff;
+--lincoln-green: #185709ff;
+--kombu-green: #22350eff; */
+
 /* About Section */
 .header-about {
     font-weight: bold;
     font-size: xxx-large;
+    Color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     text-align: center;
-    margin: 20% 20%;
+    margin: auto;
 }
+
+.paragraph-2 {
+    Color: white;
+}
+
+.paragraph-3 {
+    Color: white;
+}
+
+#about {
+    background-color: #b9d0efff;
+}
+
+.iconify {
+    font-size: 25px;
+}
+
 /* End of About Section */
 
 /* Start of Sale Items Section */
