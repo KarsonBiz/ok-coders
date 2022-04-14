@@ -20,11 +20,11 @@
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
     <!-- Link Color Scheme - Coolors Palette Widget-->
-<script src="https://coolors.co/palette-widget/widget.js"></script>
-<script data-id="0582470751059907">new CoolorsPaletteWidget("0582470751059907", ["669ee9","b9d0ef","516f1e","185709","22350e"]); </script>
+    <script src="https://coolors.co/palette-widget/widget.js"></script>
+    <script data-id="0582470751059907">new CoolorsPaletteWidget("0582470751059907", ["669ee9","b9d0ef","516f1e","185709","22350e"]); </script>
 
     <!-- Link Embedded Google Map -->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d811.6848866804379!2d-97.54943670526025!3d35.53543348361452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21a47b370053d%3A0xa43a789a3705f01b!2s6204%20N%20Barnes%20Ave%2C%20Oklahoma%20City%2C%20OK%2073112!5e0!3m2!1sen!2sus!4v1649886936656!5m2!1sen!2sus" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d811.6848866804379!2d-97.54943670526025!3d35.53543348361452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21a47b370053d%3A0xa43a789a3705f01b!2s6204%20N%20Barnes%20Ave%2C%20Oklahoma%20City%2C%20OK%2073112!5e0!3m2!1sen!2sus!4v1649886936656!5m2!1sen!2sus" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
 
     <title>Garage Sale Project</title>
   </head>
@@ -48,6 +48,7 @@
             <div class="collapse nav-bar-collapse" id="navbarSupportContent"></div>
                 <!-- Put our navlist -->
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#shopping-cart">Shopping Cart</a></li>     <!-- ADD SHOPPING CART ICON INSTEAD OF TEXT -->
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sale-items">Sale Items</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -107,7 +108,8 @@
                         <div class="card-body">
                           <h5 class="card-title header-3">Chandelier</h5>
                           <p class="card-text paragraph-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-outline-secondary btn-green">Add to Cart</a>
+                          <p>$500</p>
+                          <button id="chandelier-add" class="btn btn-outline-secondary btn-green">Add to Cart</button>
                         </div>
                     </div>   
                 </div>
@@ -119,6 +121,7 @@
                         <div class="card-body">
                             <h5 class="card-title header-3">Painting by Tutu</h5>
                             <p class="card-text paragraph-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p>$150</p>
                             <a href="#" class="btn btn-outline-secondary btn-green">Add to Cart</a>
                         </div>
                     </div>   
@@ -131,6 +134,7 @@
                         <div class="card-body">
                             <h5 class="card-title header-3">Pair of Chinese Porcelain Vases</h5>
                             <p class="card-text paragraph-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p>$100</p>
                             <a href="#" class="btn btn-outline-secondary btn-green">Add to Cart</a>
                         </div>
                     </div>   
@@ -147,6 +151,7 @@
                         <div class="card-body">
                             <h5 class="card-title header-3">Quartz Geode with Calcite Intrusion</h5>
                             <p class="card-text paragraph-4">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p>$30</p>
                             <a href="#" class="btn btn-outline-secondary btn-green">Add to Cart</a>
                         </div>
                     </div>   
@@ -160,14 +165,26 @@
     <section class="section_contact p-5" id="contact">
         <div class="container">
             <div class="row">
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <h2 class="header-about">Contact Information</h2>
+                    <br>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d811.6848866804379!2d-97.54943670526025!3d35.53543348361452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21a47b370053d%3A0xa43a789a3705f01b!2s6204%20N%20Barnes%20Ave%2C%20Oklahoma%20City%2C%20OK%2073112!5e0!3m2!1sen!2sus!4v1649888140991!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>               
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <p class="paragraph-2">Join us next Saturday and Sunday, April 23 & 24, for a one of a kind garage sale! Doors open at 10:00am both days, but will close at 5:00pm on Saturday and 3:00pm on Sunday. If supplies last, items will be up to half off on Sunday!</p>
+                    <p class="paragraph-3">Feel free to reach us at (405)664-4931 if you have any questions or would like additional information about any of the sale items. We will only be accepting cash, check, Venmo (<span class="iconify" data-icon="simple-icons:venmo"></span>) , or Cash App (<span class="iconify" data-icon="simple-icons:cashapp"></span>). Again the address is: 6204 N Barnes Ave, Oklahoma City, OK 73112.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section_contact p-5" id="contact">
+        <div class="container">
+            <div class="row">
                 <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
                     <h2 class="header-2 text-center">Let's Connect</h2>
                     <div class="row">
-                        <div class="col"> <i class="fa-brands fa-facebook"></i></div>
-                        <div class="col"> <i class="fa-brands fa-facebook"></i></div>
-                        <div class="col"> <i class="fa-brands fa-facebook"></i></div>
-                        <div class="col"> <i class="fa-brands fa-facebook"></i></div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d811.6848866804379!2d-97.54943670526025!3d35.53543348361452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21a47b370053d%3A0xa43a789a3705f01b!2s6204%20N%20Barnes%20Ave%2C%20Oklahoma%20City%2C%20OK%2073112!5e0!3m2!1sen!2sus!4v1649888140991!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>              
+                    
                     </div> 
                     <div class="row"> 
                         <div class=" col-10 mx-auto col-lg-6 mt-5 mt-lg-0">
