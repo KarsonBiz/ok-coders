@@ -158,6 +158,11 @@ function displayCart() {
             `;
         });
 
+        // I think the display problem is in the code above
+        // Need to go back and fix it
+
+        //make sure all ids and classes are properly assigned!!
+
         productContainer.innerHTML += `
             <div class="basketTotalContainer">
                 <h4 class="basketTotalTitle">Basket Total: </h4>

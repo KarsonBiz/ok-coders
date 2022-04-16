@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title>In Class</title>
+</head>
+<body>
+
+    <script>
+        const firstBoolean = true;
+        const secondBoolean = false;
+        console.log(firstBoolean);
+        console.log(secondBoolean);
+
+        console.log(!firstBoolean);
+        // Adding ! infront of the var flips the original input
+
+        console.log(firstBoolean === secondBoolean);
+        // === if the statement is true then it will render "true"
+        // === if false then it will render "false"
+
+        console.log("Karson" === "Bizzell");
+        console.log(1 > 2);
+        console.log(1 >= 2);
+        console.log("Karson" != "Karson");
+        // "Is Karson not equal to Karson" -> renders false bc it is
+
+        const shoppingCart = []
+
+        function updateCartIfCartEmpty() {
+            const isEmpty = shoppingCart.length === 0;
+            // var asks if the shopping cart is empty
+            // const isEmpty = shoppingCart.length < 1;   Another way to write the above
+
+            // to run if statement: you have to give a condition that will render a boolean inside the () 
+            // only one branch will run so the second that one statement = true the function will no longer run
+            if (isEmpty) {
+                console.log("cart is empty");
+            } else if (shoppingCart.length >= 5) {
+                console.log("discount");
+            } else if (shoppingCart.length === 4 || shoppingCart.length === 3) {
+                console.log("just buy a few more thing!");
+                //  the else if is asking is it equal to 4 OR (||) equal to 3
+            } else {
+                console.log("not empty but less than 4");
+            }
+        }
+            // the else statement doesn't require a condition
+
+        shoppingCart.push("almond milk");
+        shoppingCart.push("coffee");
+        shoppingCart.push("chicken");
+
+        updateCartIfCartEmpty();
+
+    </script>
+</body>
+
+</html>
