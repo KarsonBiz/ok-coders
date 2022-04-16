@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts */
+:root {    
+    --header-font: font-family: 'Montserrat', sans-serif;
+    --paragraph-font: 'Lora', serif;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 60px 0 60px;
+} 
+
+nav li {
+    list-style: none;
+    display: inline-block; 
+    padding-right: 10px;
+    padding-left: 10px; 
+}
+
+.header-bg {
+    background-image: url(img/house.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    position: relative;
+    color: whitesmoke;
+    margin: auto;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.header-1 {
+    border-bottom: 5px solid whitesmoke;
+    font-weight: bold;
+    font-size: 100px;
+    text-align: center;
+}
+
+.cart a {
+    background-color: #669ee9ff;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+

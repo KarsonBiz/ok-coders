@@ -58,13 +58,35 @@
 /* End of About Section */
 
 /* Start of Sale Items Section */
+.header-2-sale {
+    font-weight: bold;
+    font-size: xxx-large;
+   color: #516f1eff;
+   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+   text-align: center;
+   margin: auto;
 
+}
 
 /* End of Sale Items Section */
-
+.fa-circle-heart {
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+    color: white;
+}
+.image {
+    <i class="fa-solid fa-circle-heart"></i>
+}
 
 /* Start of Contact Section */
 #contact {
     background-color: #669ee9ff;
 }
 /* End of Contact Section */
+
+/* Fonts */
+:root {    
+    --header-font: font-family: 'Montserrat', sans-serif;
+    --paragraph-font: 'Lora', serif;
+}
