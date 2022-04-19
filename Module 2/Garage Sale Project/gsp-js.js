@@ -2,7 +2,7 @@ let carts = document.querySelectorAll('.add-cart');
 
 let products = [
     {
-        name: 'Chadelier',
+        name: 'Chandelier',
         tag: 'chandelier',
         price: 500,
         inCart: 0,
@@ -61,7 +61,7 @@ function onLoadCartNumbers() {
     }
 }
 
-function cartNumbers(product, action) {
+function cartNumbers(products, action) {
     let productNumbers = localStorage.getItem('cartNumbers');
     productNumbers = parseInt(productNumbers);
 
@@ -79,22 +79,22 @@ function cartNumbers(product, action) {
         localStorage.setItem("cartNumbers", 1);
         document.querySelector('.cart span').textContent = 1;
     }
-    setItems(product);
+    setItems(products);
 }
 
-function setItems(product) {
+function setItems(products) {
     // let productNumbers = localStorage.getItem('cartNumbers');
     // productNumbers = parseInt(productNumbers);
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
 
     if(cartItems != null) {
-        let currentProduct = product.tag;
+        let currentProduct = products.tag;
     
         if( cartItems[currentProduct] == undefined ) {
             cartItems = {
                 ...cartItems,
-                [currentProduct]: product
+                [currentProduct]: products
             }
         } 
         cartItems[currentProduct].inCart += 1;
@@ -102,27 +102,27 @@ function setItems(product) {
     } else {
         product.inCart = 1;
         cartItems = { 
-            [product.tag]: product
+            [products.tag]: products
         };
     }
 
     localStorage.setItem('productsInCart', JSON.stringify(cartItems));
 }
 
-function totalCost( product, action ) {
+function totalCost( products, action ) {
     let cart = localStorage.getItem("totalCost");
 
     if( action) {
         cart = parseInt(cart);
 
-        localStorage.setItem("totalCost", cart - product.price);
+        localStorage.setItem("totalCost", cart - products.price);
     } else if(cart != null) {
         
         cart = parseInt(cart);
-        localStorage.setItem("totalCost", cart + product.price);
+        localStorage.setItem("totalCost", cart + products.price);
     
     } else {
-        localStorage.setItem("totalCost", product.price);
+        localStorage.setItem("totalCost", products.price);
     }
 }
 
@@ -167,7 +167,7 @@ function displayCart() {
             <div class="basketTotalContainer">
                 <h4 class="basketTotalTitle">Basket Total: </h4>
                 <br>
-                <h4 class="basketTotal">$${cart}.00</h4>
+                <h4 class="basketTotal"> $${cart}.00</h4>
             </div>`
 
         deleteButtons();
