@@ -54,6 +54,16 @@ a {
   height: 100%;
 }
 
+/* .header-bg {
+  background-image: url(img/house.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: whitesmoke;
+  margin: auto;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+} */
+
 /* HEADER */
 header {
   width: 100%;

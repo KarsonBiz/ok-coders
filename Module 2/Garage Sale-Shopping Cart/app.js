@@ -28,8 +28,8 @@ function renderProducts() {
             </div>
         </div>
     </div>
-        `
-    })
+        `;
+    });
 }
 
 renderProducts();
@@ -81,7 +81,7 @@ function renderSubTotal() {
 //Render Cart Items
 function renderCartItems() {
     cartItemsEl.innerHTML = "";  // Clear Cart Element
-    cart.forEach(() => {
+    cart.forEach((item) => {
         cartItemsEl.innerHTML += `
         <div class="cart-item">
             <div class="item-info" onclick="removeItemFromCart(${item.id})">
@@ -92,13 +92,13 @@ function renderCartItems() {
                 <small>$</small>${item.price}
             </div>
             <div class="units">
-                <div class="btn minus" onclick="changeNumberOfUnits('minus',${item.id})">-</div>
+                <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
                 <div class="number">${item.numberOfUnits}</div>
-                <div class="btn plus" onclick="changeNumberOfUnits('plus',${item.id})">+</div>           
+                <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
             </div>
             
         `;
-    })
+    });
 } 
 
 // Remove item from Cart
@@ -115,10 +115,11 @@ function changeNumberOfUnits(action, id) {
         let numberOfUnits = item.numberOfUnits;
 
         if(item.id === id){
-            if(action === "minus" && numberOfUnits > 1){
-                numberOfUnits--
-            }else if(action === "plus" && numberOfUnits < item.instock)
-            numberOfUnits++;
+            if (action === "minus" && numberOfUnits > 1) {
+                numberOfUnits--;
+            }   else if (action === "plus" && numberOfUnits < item.instock) {
+                numberOfUnits++;
+            }
         }
 
         return {
@@ -126,5 +127,6 @@ function changeNumberOfUnits(action, id) {
             numberOfUnits,
         };
     });
+    
     updateCart();
 } 
