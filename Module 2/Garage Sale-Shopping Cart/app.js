@@ -8,26 +8,32 @@ const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
 function renderProducts() {
     products.forEach( (product) => {
         productsEl.innerHTML += `
-        <div class="item">
-        <div class="item-container">
-            <div class="item-img">
-                <img src="${product.imgSrc}" alt="${product.name}">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 d-flex justify-content-center mb-5 mb-lg-0">
+                <div class="card" style="width: 18rem;">
+                    <div class="item">
+                        <div class="item-container">
+                            <div class="item-img">
+                                <img src="${product.imgSrc}" alt="${product.name}">
+                            </div>
+                            <div class="desc">
+                                <h2>${product.name}</h2>
+                                <h2><small>$</small>${product.price}</h2>
+                                <p>
+                                ${product.description}
+                                </p>
+                            </div>
+                            <div class="add-to-wishlist">
+                                <img src="./icons/heart.png" alt="add to wish list">
+                            </div>
+                            <div class="add-to-cart" onclick="addToCart(${product.id})">
+                                <img src="./icons/bag-plus.png" alt="add to cart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="desc">
-                <h2>${product.name}</h2>
-                <h2><small>$</small>${product.price}</h2>
-                <p>
-                ${product.description}
-                </p>
-            </div>
-            <div class="add-to-wishlist">
-                <img src="./icons/heart.png" alt="add to wish list">
-            </div>
-            <div class="add-to-cart" onclick="addToCart(${product.id})">
-                <img src="./icons/bag-plus.png" alt="add to cart">
-            </div>
-        </div>
-    </div>
+        </div    
         `;
     });
 }

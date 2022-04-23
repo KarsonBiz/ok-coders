@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>In Class Warm Up</title>
+</head>
+<body>
+
+    <script>
+        const myData = {
+            firstName: "Karson",
+            lastName: "Bizzell",
+            addresses: ["5701 S Morgan Rd", "6204 N Barnes Ave"],
+            pets: ["Roger", "Spark", "Shimmy", "Fid", "Liz"],
+            married: true,
+            status: "single",
+            birthday: "1992-04-02",
+            salaries: [0, 0, 100, 200, 300]
+        };
+
+       
+       // What to write if we want to console.log 10x  ->  need a for loop!
+       // Parameter 1: executed 1 time before the execution of the code block
+       // Parameter 2: defines the condition for executing the code block (we want to console.log 10x so we need <10 bc we start at 0)
+       // Parameter 3: is executed everytime after the code block has been executed
+       // i stands for index (fyi)
+
+        for(var i = 0; i < 10; i++) {
+            console.log("hello");
+        };
+
+        for(var i=0; i < myData.pets.length; i++){
+            console.log(myData.pets[i]);
+        };
+
+        var total = 0;
+        for(var i=0; i < myData.salaries.length; i++){
+            total += myData.salaries[i];
+        };
+
+        console.log(total);
+
+    </script>
+
+</body>
+</html>
