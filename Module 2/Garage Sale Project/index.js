@@ -8,39 +8,36 @@ const totalItemsInCartEl = document.querySelector(".total-items-in-cart");
 function renderProducts() {
     products.forEach( (product) => {
         productsEl.innerHTML += `
-        <div class="row">
-            <div class="item">
-                <div class="item-container">
-                    <div class="item-img">
-                        <img src="${product.imgSrc}" alt="${product.name}">
-                    </div>
-                    <div class="desc">
-                        <h2>${product.name}</h2>
-                        <h2><small>$</small>${product.price}</h2>
-                        <p>
-                        ${product.description}
-                        </p>
-                    </div>
-                    <div class="add-to-wishlist">
-                        <img src="./icons/heart.png" alt="add to wish list">
-                    </div>
-                    <div class="add-to-cart" onclick="addToCart(${product.id})">
-                        <img src="./icons/bag-plus.png" alt="add to cart">
-                    </div>
-                </div>
-            </div>
-        </div    
+            <div class="row">
+                <div class="item">
+                    <div class="item-container">
+                        <div class="col-lg-4 col-md-6 d-flex justify-content-center mb-5 mb-lg-0">
+                            <div class="card" style="width: 18rem;">
+                                <div class="product">
+                                    <img src="${product.imgSrc}" class="card-img-top project-img" alt="${product.name}">
+                                </div>
+                                <div class="card-body description cart-items">
+                                    <h5 class="card-title header-3">${product.name}</h5>
+                                    <p class="card-text paragraph-4">${product.description}</p>
+                                    <p>$${product.price}</p>
+                                    <button class=" add-to-cart btn btn-outline-secondary btn-green align-self-end" onclick="addToCart(${product.id})">Add to Cart</button>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>    
+                </div>    
+            </div>           
         `;
-    });
+    });    
 }
 
 renderProducts();
 
-//Cart Array
+// Cart Array
 let cart = JSON.parse(localStorage.getItem("CART")) || [];
 updateCart();
 
-//Add to cart
+// Add to Cart
 function addToCart(id) {
     // Check if item already exists in cart
     if(cart.some((item) => item.id === id)) {
@@ -53,7 +50,7 @@ function addToCart(id) {
             numberOfUnits: 1,
         });
     }
-  
+
     updateCart();
 }
 
@@ -66,7 +63,7 @@ function updateCart() {
     localStorage.setItem("CART", JSON.stringify(cart));
 }
 
-// Calculate and render Subtotal
+// Calculate and Render Subtotal
 function renderSubTotal() {
     let totalPrice = 0,
      totalItems = 0;
@@ -75,14 +72,14 @@ function renderSubTotal() {
         totalPrice += item.price * item.numberOfUnits;
         totalItems += item.numberOfUnits;
     });
-
-    subtotalEl.innerHTML = ` Subtotal (${totalItems} items): $${totalPrice.toFixed(2)}`;
+    
+    subtotalEl.innerHTML = `Subtotal (${totalItems} items): $${totalPrice.toFixed(2)}`;
     totalItemsInCartEl.innerHTML = totalItems;
 }
 
-//Render Cart Items
+// Render Cart Items
 function renderCartItems() {
-    cartItemsEl.innerHTML = "";  // Clear Cart Element
+    cartItemsEl.innerHTML = "";  //Clear Cart Element
     cart.forEach((item) => {
         cartItemsEl.innerHTML += `
             <div class="cart-item">
@@ -98,29 +95,28 @@ function renderCartItems() {
                     <div class="number">${item.numberOfUnits}</div>
                     <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
                 </div>
-                
             </div>
         `;
     });
-} 
+}
 
-// Remove item from Cart
+// Remove Item for Cart
 function removeItemFromCart(id) {
-    cart = cart.filter((item) => item.id !== id );
+    cart = cart.filter((item) => item.id !== id);
 
     updateCart();
 }
 
-//Change number of units for an item
+// Change Number of Units for an item
 function changeNumberOfUnits(action, id) {
     cart = cart.map((item) => {
 
-        let numberOfUnits = item.numberOfUnits;
+        let numberOfUnits = items.numberOfUnits;
 
-        if(item.id === id){
-            if (action === "minus" && numberOfUnits > 1) {
+        if(item.id === id) {
+            if(action === "minus" && numberOfUnits >1){
                 numberOfUnits--;
-            }   else if (action === "plus" && numberOfUnits < item.instock) {
+            }else if(action === "plus" && numberOfUnits < item.instock){
                 numberOfUnits++;
             }
         }
@@ -130,6 +126,6 @@ function changeNumberOfUnits(action, id) {
             numberOfUnits,
         };
     });
-    
+
     updateCart();
-} 
+}

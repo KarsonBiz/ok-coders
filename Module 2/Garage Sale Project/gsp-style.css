@@ -68,8 +68,18 @@
 
 }
 
+.product {
+    width: 100%;
+    height: 395px;
+}
+
+.card {
+    position: relative;
+    display: inline;
+}
+
 .card-body {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 #add-btn {
