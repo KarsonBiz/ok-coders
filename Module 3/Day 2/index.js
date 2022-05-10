@@ -27,3 +27,4 @@ function fooBar (a = 'foo', b = 'bar') {
 console.log(fooBar(obj.a, obj.b));
 
 
+console.log();

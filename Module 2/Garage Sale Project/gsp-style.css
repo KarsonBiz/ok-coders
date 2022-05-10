@@ -68,18 +68,23 @@
 
 }
 
-.product {
+.products {
     width: 100%;
-    height: 395px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.products-list {
+    display: inline;
 }
 
 .card {
     position: relative;
-    display: inline;
+    max-width: 25rem;
 }
 
 .card-body {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    display: inline;
 }
 
 #add-btn {
