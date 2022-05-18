@@ -4,7 +4,7 @@ const forecastEndpoint = 'http://api.weatherapi.com/v1/forecast.json?key=64d9320
 const getWeatherDataButton = document.getElementById('get-weather-data');
 getWeatherDataButton.addEventListener('click', () =>
     fetch(forecastEndpoint)
-        .then(response => response.json())
+        .then((response) => response.json())
         .then((data) => addDataToPreTag(data))
         .catch((error) =>
             console.log('Error in fetch for forecast.json: ', error.message)
@@ -13,7 +13,7 @@ getWeatherDataButton.addEventListener('click', () =>
 
 function addDataToPreTag(data) {
     const resultsPreTag = document.getElementById('data-results');
-    resultsPreTag.innerText = JSON.stringify(data, null, 2);
+    resultsPreTag.innerHTML = JSON.stringify(data, null, 2);
 }
 
 // on click -> API call (Get weather api data) -> put it in a pre tag
