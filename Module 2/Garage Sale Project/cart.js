@@ -8,7 +8,7 @@ renderCartItems();
 // Calculate and Render Subtotal
 function renderSubTotal() {
     let totalPrice = 0,
-     totalItems = 0;
+        totalItems = 0;
 
     cart.forEach((item) => {
         totalPrice += item.price * item.numberOfUnits;
@@ -26,20 +26,23 @@ function renderCartItems() {
     cartItemsEl.innerHTML = "";  //Clear Cart Element
     cart.forEach((item) => {
         cartItemsEl.innerHTML += `
-            <div class="cart-item">
-                <div class="item-info" onclick="removeItemFromCart(${item.id})">
-                    <img src="${item.imgSrc}" alt="${item.name}">
-                    <h4>${item.name}</h4>
-                </div>
-                <div class="unit-price">
-                    <small>$</small>${item.price}
-                </div>
-                <div class="units">
-                    <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
-                    <div class="number">${item.numberOfUnits}</div>
-                    <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
-                </div>
+            <div class="col-lg-4 col-md-6 d-flex justify-content-center mb-5">
+                <div class="card">
+                    <div>
+                        <img src="${item.imgSrc}" class="card-img-top" alt="${item.name}">
+                    </div    
+                    <div class="cart-item item-info" onclick="removeItemFromCart(${item.id})">
+                        <h5 class="card-title card-body">${item.name}</h5>
+                        <p>$${item.price}</p>    
+                    </div>
+                    <div class="units">
+                        <div class="number">Number of items: ${item.numberOfUnits}</div>
+                        <div class="btn minus" onclick="changeNumberOfUnits('minus', ${item.id})">-</div>
+                        <div class="btn plus" onclick="changeNumberOfUnits('plus', ${item.id})">+</div>           
+                    </div>
+                </div>    
             </div>
+
         `;
     });
 }
@@ -57,10 +60,10 @@ function changeNumberOfUnits(action, id) {
 
         let numberOfUnits = item.numberOfUnits;
 
-        if(item.id === id) {
-            if(action === "minus" && numberOfUnits >1){
+        if (item.id === id) {
+            if (action === "minus" && numberOfUnits > 1) {
                 numberOfUnits--;
-            }else if(action === "plus" && numberOfUnits < item.instock){
+            } else if (action === "plus" && numberOfUnits < item.instock) {
                 numberOfUnits++;
             }
         }

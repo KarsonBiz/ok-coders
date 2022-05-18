@@ -41,7 +41,7 @@ function renderProducts() {
                     <div class="card-body description product-items">
                         <h5 class="card-title header-3">${product.name}</h5>
                         <p class="card-text paragraph-4">${product.description}</p>
-                        <p>$${product.price}</p>
+                        <p class="price">$${product.price}</p>
                         <button id="${product.id}" class="btn btn-outline-secondary btn-green align-self-end" onclick="addToCart(${product.id})" ${disable(productIsInCart)}>Add to Cart</button>
                     </div>
                 </div>   

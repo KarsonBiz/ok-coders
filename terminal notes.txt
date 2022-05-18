@@ -1,0 +1,9 @@
+Terminal Commands:
+
+cd ./  --> "current directory"
+cd ~  --> takes you home
+cd --> "change directory"   
+    *make sure to write it as:   cd Module\ 3/Day\ 2/index.js
+ls --> "list"
+mkdir --> "make directory" to create a new one
+touch index.js --> makes a new empty file 

@@ -8,8 +8,8 @@ const fetch = require('cross-fetch');
 
 console.log('HELLO!');
 
-    // Fetch
-    // used "npm install cross-fetch" to install to node 
+    // Promise .then
+    // used "npm install cross-fetch" to install Fetch to node 
 
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response) => response.json())
@@ -20,7 +20,7 @@ console.log('HELLO!');
     // look up: https://jsonplaceholder.typicode.com/posts  
    
 
-// Async/Await
+// Promise Async/Await
     // JavaScript is naturally async
     // Await is another way to write a promsie 
 
@@ -31,3 +31,14 @@ console.log('HELLO!');
             // The JSON.parse() method parses a JSON string, constructing the JavaScript value or object described by the string. 
         // JSON.stringify()
             // 
+
+async function main() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const data = await response.json();
+    console.log(data);
+}
+
+main();
+
+
+// the fetch and the async function run the same command just different ways to write it

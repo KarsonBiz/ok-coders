@@ -80,6 +80,11 @@
 .card {
     position: relative;
     max-width: 25rem;
+    height: 775px;
+}
+
+.card-img-top {
+    height: 475px;
 }
 
 .card-body {
@@ -87,8 +92,10 @@
     display: inline;
 }
 
-#add-btn {
+.btn {
     position: absolute;
+    margin-top: auto;
+    padding: 10px;
     bottom: 10px;
 }
 
