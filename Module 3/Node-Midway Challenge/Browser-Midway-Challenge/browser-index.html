@@ -26,41 +26,29 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="app-title">
-            <p>Weather</p>
+    <section class="top-banner">
+        <div class="container">
+            <h1 class="heading">Javascript Weather App</h1>
+            <form>
+                <input type="text" placeholder="Search for a city" autofocus>
+                <button class="submit" id="submit">Submit</button>
+                <span class="msg"></span>
+            </form>
         </div>
-        <div class="notification"></div>
-        <div class="weather-container">
-            <div class="weather-icon">
-                <img src="https://www.weatherapi.com/docs/weather_conditions.json">
-            </div>
-            <div class="temperature-value">
-                <p>- °<span>C</span></p>
-            </div>
-            <div class="temperature-description">
-                <p>-</p>
-            </div>
-            <div class="location">
-                <p>-</p>
-            </div>
+    </section>
+    <section class="ajax-section">
+        <div class="container">
+            <ul class="cities"></ul>
         </div>
-    </div>
-    <div class="container">
-        <ul class="cities"></ul>
-    </div>
+    </section>
 
 
     <!-- Javascript -->
-    <script src="./index.js"></script>
+    <script src="./browser-app.js"></script>
 </body>
 
 <footer>
-    <nav>
-        <a href="https://www.weatherapi.com/" title="Free Weather API"><img
-                src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com"
-                border="0"></a>
-    </nav>
+    Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>
 </footer>
 
 </html>
