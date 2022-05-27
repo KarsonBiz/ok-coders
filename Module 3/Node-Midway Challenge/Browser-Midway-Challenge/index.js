@@ -1,20 +1,18 @@
 const iconElement = document.querySelector(".weather-icon");
-const tempElement = document.querySelector(".temperature-value p");
-const descElement = document.querySelector(".temperature.description p");
-const locationElement = document.querySelector(".location p");
-// const notificationElement = document.querySelector(".notification");
+const tempElement = document.querySelector(".temperature-value");
+const descElement = document.querySelector(".temperature-description");
+const locationElement = document.querySelector(".location");
 
 const weatherApiKey = '64d9320b889c48d8938195727221805';
-const url = `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${setLocation}`;
 
 
-function setLocation(data) {
-    let city = data.location.name;
+// function setLocation(data) {
+//     const city = data.location.name;
 
-    getWeather(city);
-}
+//     getWeather(city);
+// }
 
-console.log(setLocation);
+// console.log(setLocation);
 
 // App Data
 // const weather = {};
@@ -37,45 +35,25 @@ function attachGetWeatherDataButtonListener() {
 }
 
 
-// async function getWeatherData() {
-//     try {
-//         const res = await fetch(url);
-//         const data = await res.json();
-//         addDataToApp(data)
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-
-// Get Weather From API Provider
-function getWeather(city) {
-    let api = `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${setLocation}&days=5`;
-
-    fetch(api)
-    then(function (response) {
-        let data = response.json();
-        return data;
-    });
-    then(function (data) {
-        weather.temperature.value = Math.floor(data.current.temp_f);
-        weather.description = data.current.condition.text;
-        weather.iconId = data.current.condition.icon;
-        weather.city = data.location.name;
-        weather.region = data.location.region;
-        weather.country = data.location.country;
-    })
-    then(function () {
-        displayWeather();
-    })
-
-    // Display Weather to UI
-    function displayWeather() {
-        iconElement.innerHTML = `<img src="icons/${data.current.condition.icon}.png/>`;
-        tempElement.innerHTML = `${data.current.temp_f}°<span>F</span>`;
-        descElement.innerHTML = data.current.condition.text;
-        locationElement.innerHTML = `${data.location.name}, ${data.location.region}, ${data.location.country}`;
+async function getWeather() {
+    try {
+        const city = document.getElementById("city-input").value;
+        const api = `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${city}&days=5`;
+        const res = await fetch(api);
+        const data = await res.json();
+        displayWeather(data);
+    } catch (error) {
+        console.log(error);
     }
+}
+
+// Display Weather to UI
+function displayWeather(data) {
+    console.log(data.current.condition.icon);
+    iconElement.innerHTML = `<img src="${data.current.condition.icon}"/>`;
+    tempElement.innerHTML = `${data.current.temp_f}°<span>F</span>`;
+    descElement.innerHTML = data.current.condition.text;
+    locationElement.innerHTML = `${data.location.name}, ${data.location.region}, ${data.location.country}`;
 };
 
 

@@ -27,24 +27,20 @@
 
 <body>
     <section>
-        <div class="container">
+        <div class="container heading-container">
             <h1 class="heading">Weather JS</h1>
-            <form>
-                <input type="text" placeholder="Search for a city" autofocus>
+            <div class="city-input">
+                <input id="city-input" type="text" placeholder="Search for a city" autofocus>
                 <button class="submit" id="submit">Submit</button>
                 <span class="msg"></span>
-            </form>
+            </div>
         </div>
     </section>
     <section>
         <div class="container">
-            <!-- <div class="app-title">
-                <p>Weather JS</p>
-            </div>
-            <div class="notification"></div> -->
             <div class="weather-container">
                 <div class="weather-icon">
-                    <img src="https://www.weatherapi.com/docs/weather_conditions.json">
+                    <img src="./Weather-Icon-Initial/116.png">
                 </div>
                 <div class="temperature-value">
                     <p>- °<span>F</span></p>
@@ -60,19 +56,16 @@
         <div class="container">
             <ul class="cities"></ul>
         </div>
+        <div class="logo">
+            <a href="https://www.weatherapi.com/" title="Free Weather API"><img
+                    src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com"
+                    border="0"></a>
+        </div>
     </section>
 
 
     <!-- Javascript -->
     <script src="./index.js"></script>
 </body>
-
-<footer>
-    <nav>
-        <a href="https://www.weatherapi.com/" title="Free Weather API"><img
-                src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com"
-                border="0"></a>
-    </nav>
-</footer>
 
 </html>
