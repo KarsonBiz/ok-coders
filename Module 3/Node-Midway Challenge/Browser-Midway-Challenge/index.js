@@ -2,44 +2,55 @@ const iconElement = document.querySelector(".weather-icon");
 const tempElement = document.querySelector(".temperature-value p");
 const descElement = document.querySelector(".temperature.description p");
 const locationElement = document.querySelector(".location p");
-const notificationElement = document.querySelector(".notification");
+// const notificationElement = document.querySelector(".notification");
 
 const weatherApiKey = '64d9320b889c48d8938195727221805';
-const forecastEndpoint = `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${inputVal}`
+const url = `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${setLocation}`;
+
+
+function setLocation(data) {
+    let city = data.location.name;
+
+    getWeather(city);
+}
+
+console.log(setLocation);
 
 // App Data
-const weather = {};
-weather.temperature = {
-    unit: "celsius"
+// const weather = {};
+// weather.temperature = {
+//     unit: "celsius"
+// }
+
+// const kelvin = 273;
+
+
+window.onload = () => {
+    attachGetWeatherDataButtonListener();
+};
+
+function attachGetWeatherDataButtonListener() {
+    const getWeatherDataButton = document.getElementById("submit");
+    if (getWeatherDataButton) {
+        getWeatherDataButton.addEventListener("click", getWeather);
+    }
 }
 
-const kelvin = 273;
 
-// Check If Browser Supports Geolocation
-if ('geolocation' in navigator) {
-    navigator.geolocation.getCurrentPosition(setPosition, showError);
-} else {
-    notificationElement.getElementsByClassName.display = "block";
-    notificationElement.innerHTML = "<p>Browser doesn't support geolocation</p>";
-}
+// async function getWeatherData() {
+//     try {
+//         const res = await fetch(url);
+//         const data = await res.json();
+//         addDataToApp(data)
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
-// See User's Position
-function setPosition(position) {
-    let latitude = position.location.latitude;
-    let longitude = position.location.longitude;
-
-    getWeather(latitude, longitude);
-}
-
-// Show Error When There Is An Issue With Geolocation Service
-function showError(error) {
-    notificationElement.getElementsByClassName.display = "block";
-    notificationElement.innerHTML = `<p> ${error.message} </p>`
-}
 
 // Get Weather From API Provider
-function getWeather(latitude, longitude) {
-    let api = `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${latitude},${longitude}&days=5`;
+function getWeather(city) {
+    let api = `http://api.weatherapi.com/v1/forecast.json?key=${weatherApiKey}&q=${setLocation}&days=5`;
 
     fetch(api)
     then(function (response) {
@@ -47,35 +58,24 @@ function getWeather(latitude, longitude) {
         return data;
     });
     then(function (data) {
-        weather.temperature.value = Math.floor(data.main.temp - kelvin);
-        weather.description = data.weather[0].description;
-        weather.iconId = data.weather[0].com;
-        weather.city = data.name;
-        weather.country = data.sys.country;
+        weather.temperature.value = Math.floor(data.current.temp_f);
+        weather.description = data.current.condition.text;
+        weather.iconId = data.current.condition.icon;
+        weather.city = data.location.name;
+        weather.region = data.location.region;
+        weather.country = data.location.country;
     })
     then(function () {
         displayWeather();
     })
 
-}// Display Weather to UI
-function displayWeather() {
-    iconElement.innerHTML = `<img src="icons/${weather.iconId}.png/>`;
-    tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
-    descElement.innerHTML = weather.description;
-    locationElement.innerHTML = `${weather.city}, ${weather.country}`;
-}
+    // Display Weather to UI
+    function displayWeather() {
+        iconElement.innerHTML = `<img src="icons/${data.current.condition.icon}.png/>`;
+        tempElement.innerHTML = `${data.current.temp_f}°<span>F</span>`;
+        descElement.innerHTML = data.current.condition.text;
+        locationElement.innerHTML = `${data.location.name}, ${data.location.region}, ${data.location.country}`;
+    }
+};
 
-// const getWeatherDataButton = document.getElementById('get-weather-data');
-// getWeatherDataButton.addEventListener('click', () =>
-//     fetch(forecastEndpoint)
-//         .then((response) => response.json())
-//         .then((data) => addDataToPreTag(data))
-//         .catch((error) =>
-//             console.log('Error in fetch for forecast.json: ', error.message)
-//         )
-// );
 
-// function addDataToPreTag(data) {
-//     const resultsPreTag = document.getElementById('data-results');
-//     resultsPreTag.innerHTML = JSON.stringify(data, null, 2);
-// }

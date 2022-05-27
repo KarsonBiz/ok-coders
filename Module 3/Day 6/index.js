@@ -4,14 +4,14 @@ const forecastEndpoint = `http://api.weatherapi.com/v1/forecast.json?key=${weath
 
 window.onload = () => {
     attachGetWeatherDataButtonListener();
-  };
+};
 
-  function attachGetWeatherDataButtonListener() {
-      const getWeatherDataButton = document.getElementById("get-weather-data");
-      if (getWeatherDataButton) {
-          getWeatherDataButton.addEventListener("click", getWeatherData);
-      }
-  }
+function attachGetWeatherDataButtonListener() {
+    const getWeatherDataButton = document.getElementById("get-weather-data");
+    if (getWeatherDataButton) {
+        getWeatherDataButton.addEventListener("click", getWeatherData);
+    }
+}
 
 function addDataToPreTag(data) {
     const resultsPreTag = document.getElementById('data-results');

@@ -26,29 +26,41 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="app-title">
-            <p>Weather</p>
+    <section>
+        <div class="container">
+            <h1 class="heading">Weather JS</h1>
+            <form>
+                <input type="text" placeholder="Search for a city" autofocus>
+                <button class="submit" id="submit">Submit</button>
+                <span class="msg"></span>
+            </form>
         </div>
-        <div class="notification"></div>
-        <div class="weather-container">
-            <div class="weather-icon">
-                <img src="https://www.weatherapi.com/docs/weather_conditions.json">
+    </section>
+    <section>
+        <div class="container">
+            <!-- <div class="app-title">
+                <p>Weather JS</p>
             </div>
-            <div class="temperature-value">
-                <p>- °<span>C</span></p>
-            </div>
-            <div class="temperature-description">
-                <p>-</p>
-            </div>
-            <div class="location">
-                <p>-</p>
+            <div class="notification"></div> -->
+            <div class="weather-container">
+                <div class="weather-icon">
+                    <img src="https://www.weatherapi.com/docs/weather_conditions.json">
+                </div>
+                <div class="temperature-value">
+                    <p>- °<span>F</span></p>
+                </div>
+                <div class="temperature-description">
+                    <p>-</p>
+                </div>
+                <div class="location">
+                    <p>-</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <ul class="cities"></ul>
-    </div>
+        <div class="container">
+            <ul class="cities"></ul>
+        </div>
+    </section>
 
 
     <!-- Javascript -->
