@@ -6,23 +6,6 @@ const locationElement = document.querySelector(".location");
 const weatherApiKey = '64d9320b889c48d8938195727221805';
 
 
-// function setLocation(data) {
-//     const city = data.location.name;
-
-//     getWeather(city);
-// }
-
-// console.log(setLocation);
-
-// App Data
-// const weather = {};
-// weather.temperature = {
-//     unit: "celsius"
-// }
-
-// const kelvin = 273;
-
-
 window.onload = () => {
     attachGetWeatherDataButtonListener();
 };
@@ -51,7 +34,7 @@ async function getWeather() {
 function displayWeather(data) {
     console.log(data.current.condition.icon);
     iconElement.innerHTML = `<img src="${data.current.condition.icon}"/>`;
-    tempElement.innerHTML = `${data.current.temp_f}°<span>F</span>`;
+    tempElement.innerHTML = `${data.current.temp_f}° F`;
     descElement.innerHTML = data.current.condition.text;
     locationElement.innerHTML = `${data.location.name}, ${data.location.region}, ${data.location.country}`;
 };

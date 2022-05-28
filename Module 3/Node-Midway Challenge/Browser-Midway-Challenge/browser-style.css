@@ -1,5 +1,5 @@
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Prompt', sans-serif;
 }
 
 body{
@@ -24,8 +24,8 @@ body{
 
 .heading{
     text-align: center;
-    font-family: 'Roboto';
-    font-weight:bolder;
+    font-family: 'Prompt';
+    font-weight: 700;
     padding: 10px;
 }
 
@@ -49,23 +49,17 @@ body{
     height: 260px;
 }
 
-/* .weather-icon{
-    width: auto;
-    height: auto;
-} */
-
 .weather-icon img{
     width: 100px;
     height: 100px;
-    margin-left: 50%;
+    margin-left: 57%;
 }
 
 .temperature-value{
-    width: 300px;
-    height:60px;
     margin-left: 50%;
     color: #293251;
-    font-size: 4em;
+    font-size: large;
+    font-weight: 700;
     text-align: center;
     cursor: pointer;
 }
@@ -74,18 +68,12 @@ body{
     
 }
 
-.temperature-value span{
-    color: #293251;
-    font-size: 0.5em;
-    margin-left: 50%;
-    margin-bottom: 10px;
-}
-
 .temperature-description{
     padding: 8px;
     margin-top: 10px;
     color: #293251;
     text-align: center;
+    font-weight: 450;
     margin-left: 50%;
     font-size: 1.2em;
 }
@@ -93,9 +81,10 @@ body{
 .location{
     margin: 0;
     padding: 0;
+    width: 400px;
     color: #293251;
     text-align: center;
-    margin-left: 50%;
+    font-weight: 450;
     font-size: 0.8em;
 }
 
