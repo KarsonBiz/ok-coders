@@ -8,7 +8,7 @@ body{
 
 .container{
     width: 500px; 
-    background-color: white;   
+    background-color: white;  
     
     display: block;
     margin: 0 auto;
@@ -55,18 +55,15 @@ body{
 } */
 
 .weather-icon img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
+    margin-left: 50%;
 }
 
 .temperature-value{
     width: 300px;
     height:60px;
-    padding: 0;
-    margin: 0;
+    margin-left: 50%;
     color: #293251;
     font-size: 4em;
     text-align: center;
@@ -79,15 +76,17 @@ body{
 
 .temperature-value span{
     color: #293251;
-    text-align: center;
     font-size: 0.5em;
+    margin-left: 50%;
+    margin-bottom: 10px;
 }
 
 .temperature-description{
     padding: 8px;
-    margin: 0;
+    margin-top: 10px;
     color: #293251;
     text-align: center;
+    margin-left: 50%;
     font-size: 1.2em;
 }
 
@@ -96,6 +95,7 @@ body{
     padding: 0;
     color: #293251;
     text-align: center;
+    margin-left: 50%;
     font-size: 0.8em;
 }
 
