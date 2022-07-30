@@ -15,3 +15,8 @@ React App
 npx create-react-app name-app  --> create new react app
 cd name-app  --> change directory to that react app
 npm start --> start running the react app
+
+
+
+Random Shorthand Commands
+highlight text and press: Command d  --> selects and changes the same value throughout the same page
